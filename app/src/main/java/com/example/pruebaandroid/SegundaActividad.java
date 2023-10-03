@@ -40,11 +40,15 @@ public class SegundaActividad extends AppCompatActivity {
         String nombre = intent.getStringExtra("Nombre");
         txtBienvenida.setText("BIENVENIDO " + nombre);
 
-        String masculino = intent.getStringExtra("Sexo");
-        txtGenero.setText(masculino);
+        if (nombre==nombre){
+            String masculino = intent.getStringExtra("Sexo");
+            txtGenero.setText(masculino);
+            String femenino = intent.getStringExtra("Sexo");
+            txtGenero.setText(femenino);
 
-        String femenino = intent.getStringExtra("Sexo");
-        txtGenero.setText(femenino);
+            txtNombre.setText(nombre);
+        }
+
 
         btnIr.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class TerceraActividad extends AppCompatActivity {
 
-    private Button btnVolver2,btnMale,btnFemale;
+    private Button btnVolver2,btnMale,btnFemale,btnIr2;
     private String sexo;
 
     @Override
@@ -20,7 +20,9 @@ public class TerceraActividad extends AppCompatActivity {
         btnVolver2 = findViewById(R.id.btnVolver2);
         btnFemale = findViewById(R.id.btnFemale);
         btnMale = findViewById(R.id.btnMale);
+        btnIr2 = findViewById(R.id.btnIr2);
 
+        //Volver a la segunda actividad
         btnVolver2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -31,6 +33,16 @@ public class TerceraActividad extends AppCompatActivity {
             }
         });
 
+        btnIr2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(TerceraActividad.this, CuartaActividad.class);
+                startActivity(intent);
+            }
+        });
+
+        //Boton de genero masculino
         btnMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -45,19 +57,19 @@ public class TerceraActividad extends AppCompatActivity {
             }
         });
 
+        //Boton de genero femenino
         btnFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
                 Intent intent = new Intent(TerceraActividad.this, SegundaActividad.class);
-
                 String femenino = "Femenino";
-
                 intent.putExtra("Sexo",femenino);
 
                 startActivity(intent);
             }
         });
+
 
     }
 }
